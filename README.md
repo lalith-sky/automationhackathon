@@ -1,8 +1,15 @@
-# J.A.R.V.I.S AI Dashboard
+# JARVIS OMEGA PROTOCOL 
 
-A futuristic AI-powered dashboard for document analysis, HR management, and financial insights with a cyberpunk aesthetic.
+[![License: MIT](https://img.shields.io/badge/License-MIT-cyan.svg)](https://opensource.org/licenses/MIT)
+[![Node.js](https://img.shields.io/badge/Node.js-v14+-green.svg)](https://nodejs.org/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-v4.4+-brightgreen.svg)](https://www.mongodb.com/)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
-## 🚀 Features
+**Enterprise AI Command Center for Intelligent Document Analysis**
+
+A cutting-edge AI-powered document analysis system with a futuristic cyberpunk interface inspired by JARVIS from Iron Man. Features advanced NLP, real-time analysis, and a stunning holographic UI.
+
+## Features
 
 ### Frontend
 - **Holographic Interface**: 3D rotating Jarvis face with neon effects (#00ffff)
