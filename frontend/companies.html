@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JARVIS IDP - Companies</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="finance.html">Finance</a>
+        <a href="companies.html">Companies</a>
+    </nav>
+
+    <div class="dashboard">
+        <div class="panel">
+            <h2>Company Analytics</h2>
+            <p>View HR and finance compliance for different companies.</p>
+        </div>
+        <div class="panel">
+            <h2>Quick Actions</h2>
+            <ul>
+                <li>Upload Company Data</li>
+                <li>View Compliance Score</li>
+                <li>Generate Reports</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="chatbot">
+        <div class="chat-window" id="chatWindow"></div>
+        <input type="text" id="userInput" placeholder="Type your question...">
+        <div class="flex gap-2">
+            <button id="sendBtn">Send</button>
+            <button id="voiceBtn">🎤</button>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

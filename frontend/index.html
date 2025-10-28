@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>J.A.R.V.I.S. AI Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- Intro / Loading -->
+<div id="intro-screen">
+    <div class="jarvis-holo-container">
+        <div class="jarvis-holo-face">
+            <div class="layer layer1"></div>
+            <div class="layer layer2"></div>
+            <div class="layer layer3"></div>
+            <div class="scan-lines"></div>
+        </div>
+        <p class="loading-text">Initializing J.A.R.V.I.S...</p>
+    </div>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="logo">J.A.R.V.I.S AI</div>
+    <ul>
+        <li><a href="#" data-module="Finance">Finance</a></li>
+        <li><a href="#" data-module="HR">HR</a></li>
+        <li><a href="#" data-module="Analytics">Analytics</a></li>
+        <li><a href="#" data-module="Compliance">Compliance</a></li>
+        <li><a href="#" data-module="Reports">Reports</a></li>
+    </ul>
+</nav>
+
+<!-- Main Dashboard -->
+<main class="main-section">
+    <div class="dashboard-layout">
+        <!-- Left Side - Document Upload & Filter -->
+        <section class="left-panel">
+            <div class="module-content">
+                <h2 id="module-title">Select a module to start</h2>
+                <p id="module-desc">Upload documents or use Jarvis assistant for insights.</p>
+
+                <div class="upload-container">
+                    <label for="uploadFile">Upload Document (PDF/TXT)</label>
+                    <input type="file" id="uploadFile" accept=".pdf,.txt"/>
+                    <p id="file-name">No file selected.</p>
+                </div>
+
+                <div class="filter-buttons">
+                    <button data-filter="finance">Finance</button>
+                    <button data-filter="hr">HR</button>
+                    <button data-filter="analytics">Analytics</button>
+                    <button data-filter="compliance">Compliance</button>
+                    <button data-filter="reports">Reports</button>
+                </div>
+
+                <div id="document-list" class="document-list"></div>
+            </div>
+        </section>
+
+        <!-- Right Side - Chatbot -->
+        <section class="right-panel">
+            <div class="chatbot-container" id="chatbot">
+                <div class="chat-header">Jarvis Assistant</div>
+                <div id="jarvis-face" class="holo-face-container">
+                    <div class="holo-face"></div>
+                </div>
+                <div class="chat-body" id="chat-body"></div>
+                <div class="prompt-options">
+                    <button class="prompt-btn">Audit HR Contract</button>
+                    <button class="prompt-btn">Summarize Finance Report</button>
+                    <button class="prompt-btn">Extract Employee Names</button>
+                    <button class="prompt-btn">List Compliance Issues</button>
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="user-input" placeholder="Ask Jarvis..." />
+                    <button id="send-btn">Send</button>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>Help Center</h3>
+            <ul>
+                <li><a href="#documentation">Documentation</a></li>
+                <li><a href="#tutorials">Tutorials</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Support</h3>
+            <ul>
+                <li><a href="#contact">Contact Support</a></li>
+                <li><a href="#bug-report">Bug Report</a></li>
+                <li><a href="#feature-request">Feature Request</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>J.A.R.V.I.S AI</h3>
+            <p>Intelligent Document Processing</p>
+            <p>Version 1.0.0</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 J.A.R.V.I.S AI Dashboard. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

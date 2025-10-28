@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JARVIS - Frontend Test Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0015 0%, #1a0033 50%, #0f0520 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: rgba(10, 0, 30, 0.85);
+            border: 2px solid rgba(138, 43, 226, 0.5);
+            border-radius: 20px;
+            padding: 3rem;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 0 60px rgba(138, 43, 226, 0.3);
+        }
+
+        h1 {
+            color: #00ffff;
+            text-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+            margin-bottom: 1rem;
+            text-align: center;
+            font-size: 2.5rem;
+            letter-spacing: 3px;
+        }
+
+        h2 {
+            color: #8a2be2;
+            margin: 2rem 0 1rem;
+            font-size: 1.5rem;
+        }
+
+        .test-section {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+        }
+
+        .test-item {
+            margin: 1rem 0;
+            padding: 1rem;
+            background: rgba(0, 255, 255, 0.05);
+            border-left: 3px solid #00ffff;
+            border-radius: 5px;
+        }
+
+        .status {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-left: 1rem;
+        }
+
+        .status.success {
+            background: rgba(0, 255, 0, 0.2);
+            color: #00ff00;
+            border: 1px solid #00ff00;
+        }
+
+        .status.pending {
+            background: rgba(255, 255, 0, 0.2);
+            color: #ffff00;
+            border: 1px solid #ffff00;
+        }
+
+        .status.error {
+            background: rgba(255, 0, 0, 0.2);
+            color: #ff0000;
+            border: 1px solid #ff0000;
+        }
+
+        button {
+            padding: 0.8rem 1.5rem;
+            background: linear-gradient(135deg, #8a2be2, #ff00ff);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 0.5rem;
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #9d3ef5, #ff33ff);
+            box-shadow: 0 8px 25px rgba(138, 43, 226, 0.4);
+            transform: translateY(-2px);
+        }
+
+        a {
+            color: #00ffff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+        }
+
+        .link-section {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .link-card {
+            flex: 1;
+            min-width: 200px;
+            padding: 1.5rem;
+            background: rgba(138, 43, 226, 0.1);
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .link-card:hover {
+            background: rgba(138, 43, 226, 0.2);
+            border-color: #8a2be2;
+            transform: translateY(-5px);
+        }
+
+        code {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            color: #00ffff;
+            font-family: 'Courier New', monospace;
+        }
+
+        .result {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: #00ff00;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>JARVIS OMEGA PROTOCOL</h1>
+        <p style="text-align: center; color: #8a2be2; margin-bottom: 2rem;">Frontend Test Suite</p>
+
+        <div class="test-section">
+            <h2>📄 Page Navigation</h2>
+            <div class="link-section">
+                <div class="link-card">
+                    <h3 style="color: #00ffff; margin-bottom: 0.5rem;">Login Page</h3>
+                    <a href="login.html" target="_blank">Open Login →</a>
+                </div>
+                <div class="link-card">
+                    <h3 style="color: #00ffff; margin-bottom: 0.5rem;">Register Page</h3>
+                    <a href="signup.html" target="_blank">Open Register →</a>
+                </div>
+                <div class="link-card">
+                    <h3 style="color: #00ffff; margin-bottom: 0.5rem;">Dashboard</h3>
+                    <a href="index.html" target="_blank">Open Dashboard →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>🔌 Backend API Tests</h2>
+            
+            <div class="test-item">
+                <strong>Health Check</strong>
+                <span class="status pending" id="health-status">Pending</span>
+                <button onclick="testHealth()">Test Health Endpoint</button>
+                <div class="result" id="health-result" style="display: none;"></div>
+            </div>
+
+            <div class="test-item">
+                <strong>User Registration</strong>
+                <span class="status pending" id="register-status">Pending</span>
+                <button onclick="testRegister()">Test Register API</button>
+                <div class="result" id="register-result" style="display: none;"></div>
+            </div>
+
+            <div class="test-item">
+                <strong>User Login</strong>
+                <span class="status pending" id="login-status">Pending</span>
+                <button onclick="testLogin()">Test Login API</button>
+                <div class="result" id="login-result" style="display: none;"></div>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>💾 LocalStorage Tests</h2>
+            
+            <div class="test-item">
+                <strong>Check Stored Token</strong>
+                <button onclick="checkToken()">Check Token</button>
+                <div class="result" id="token-result" style="display: none;"></div>
+            </div>
+
+            <div class="test-item">
+                <strong>Check Stored User</strong>
+                <button onclick="checkUser()">Check User</button>
+                <div class="result" id="user-result" style="display: none;"></div>
+            </div>
+
+            <div class="test-item">
+                <strong>Clear Storage</strong>
+                <button onclick="clearStorage()" style="background: linear-gradient(135deg, #ff0000, #cc0000);">Clear All Data</button>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>📝 Test Credentials</h2>
+            <p style="margin: 1rem 0;">Use these credentials for testing:</p>
+            <ul style="list-style: none; padding: 0;">
+                <li style="margin: 0.5rem 0;">Username: <code>testuser</code></li>
+                <li style="margin: 0.5rem 0;">Email: <code>test@example.com</code></li>
+                <li style="margin: 0.5rem 0;">Password: <code>password123</code></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:5000/api';
+
+        async function testHealth() {
+            const statusEl = document.getElementById('health-status');
+            const resultEl = document.getElementById('health-result');
+            
+            statusEl.className = 'status pending';
+            statusEl.textContent = 'Testing...';
+            resultEl.style.display = 'none';
+
+            try {
+                const response = await fetch(`${API_BASE}/health`);
+                const data = await response.json();
+                
+                statusEl.className = 'status success';
+                statusEl.textContent = 'Success';
+                resultEl.style.display = 'block';
+                resultEl.textContent = JSON.stringify(data, null, 2);
+            } catch (error) {
+                statusEl.className = 'status error';
+                statusEl.textContent = 'Error';
+                resultEl.style.display = 'block';
+                resultEl.textContent = `Error: ${error.message}\n\nMake sure backend is running on port 5000`;
+            }
+        }
+
+        async function testRegister() {
+            const statusEl = document.getElementById('register-status');
+            const resultEl = document.getElementById('register-result');
+            
+            statusEl.className = 'status pending';
+            statusEl.textContent = 'Testing...';
+            resultEl.style.display = 'none';
+
+            const testData = {
+                username: 'testuser_' + Date.now(),
+                email: `test${Date.now()}@example.com`,
+                password: 'password123'
+            };
+
+            try {
+                const response = await fetch(`${API_BASE}/auth/register`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(testData)
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    statusEl.className = 'status success';
+                    statusEl.textContent = 'Success';
+                    resultEl.style.display = 'block';
+                    resultEl.textContent = `✅ User registered!\n${JSON.stringify(data, null, 2)}`;
+                } else {
+                    statusEl.className = 'status error';
+                    statusEl.textContent = 'Failed';
+                    resultEl.style.display = 'block';
+                    resultEl.textContent = `❌ ${data.error || 'Registration failed'}`;
+                }
+            } catch (error) {
+                statusEl.className = 'status error';
+                statusEl.textContent = 'Error';
+                resultEl.style.display = 'block';
+                resultEl.textContent = `Error: ${error.message}`;
+            }
+        }
+
+        async function testLogin() {
+            const statusEl = document.getElementById('login-status');
+            const resultEl = document.getElementById('login-result');
+            
+            statusEl.className = 'status pending';
+            statusEl.textContent = 'Testing...';
+            resultEl.style.display = 'none';
+
+            const testData = {
+                email: 'test@example.com',
+                password: 'password123'
+            };
+
+            try {
+                const response = await fetch(`${API_BASE}/auth/login`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(testData)
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    statusEl.className = 'status success';
+                    statusEl.textContent = 'Success';
+                    resultEl.style.display = 'block';
+                    resultEl.textContent = `✅ Login successful!\n${JSON.stringify(data, null, 2)}`;
+                } else {
+                    statusEl.className = 'status error';
+                    statusEl.textContent = 'Failed';
+                    resultEl.style.display = 'block';
+                    resultEl.textContent = `❌ ${data.error || 'Login failed'}\n\nNote: User must be registered first!`;
+                }
+            } catch (error) {
+                statusEl.className = 'status error';
+                statusEl.textContent = 'Error';
+                resultEl.style.display = 'block';
+                resultEl.textContent = `Error: ${error.message}`;
+            }
+        }
+
+        function checkToken() {
+            const resultEl = document.getElementById('token-result');
+            const token = localStorage.getItem('jarvis_token');
+            
+            resultEl.style.display = 'block';
+            if (token) {
+                resultEl.textContent = `Token found:\n${token.substring(0, 50)}...`;
+            } else {
+                resultEl.textContent = 'No token found. Please login first.';
+            }
+        }
+
+        function checkUser() {
+            const resultEl = document.getElementById('user-result');
+            const user = localStorage.getItem('jarvis_user');
+            
+            resultEl.style.display = 'block';
+            if (user) {
+                resultEl.textContent = `User data:\n${JSON.stringify(JSON.parse(user), null, 2)}`;
+            } else {
+                resultEl.textContent = 'No user data found. Please login first.';
+            }
+        }
+
+        function clearStorage() {
+            localStorage.clear();
+            alert('✅ LocalStorage cleared!');
+        }
+    </script>
+</body>
+</html>

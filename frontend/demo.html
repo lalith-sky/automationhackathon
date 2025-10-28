@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JARVIS OMEGA PROTOCOL - Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0015 0%, #1a0033 50%, #0f0520 100%);
+            color: white;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #00ffff;
+            text-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+            margin-bottom: 1rem;
+            text-align: center;
+            font-size: 3rem;
+            letter-spacing: 5px;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 20px rgba(0, 255, 255, 0.8); }
+            to { text-shadow: 0 0 40px rgba(0, 255, 255, 1); }
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #8a2be2;
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            letter-spacing: 2px;
+        }
+
+        .page-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .page-card {
+            background: rgba(10, 0, 30, 0.85);
+            border: 2px solid rgba(138, 43, 226, 0.5);
+            border-radius: 20px;
+            padding: 2rem;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 0 40px rgba(138, 43, 226, 0.3);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .page-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 60px rgba(138, 43, 226, 0.5);
+            border-color: #8a2be2;
+        }
+
+        .page-card h2 {
+            color: #00ffff;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .page-card p {
+            color: #b0b0b0;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #8a2be2, #ff00ff);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 8px 25px rgba(138, 43, 226, 0.4);
+        }
+
+        .btn:hover {
+            background: linear-gradient(135deg, #9d3ef5, #ff33ff);
+            box-shadow: 0 12px 35px rgba(138, 43, 226, 0.6);
+            transform: translateY(-3px);
+        }
+
+        .status-section {
+            background: rgba(10, 0, 30, 0.85);
+            border: 2px solid rgba(0, 255, 255, 0.3);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .status-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            border-left: 3px solid #00ffff;
+        }
+
+        .status-badge {
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .status-online {
+            background: rgba(0, 255, 0, 0.2);
+            color: #00ff00;
+            border: 1px solid #00ff00;
+        }
+
+        .status-offline {
+            background: rgba(255, 0, 0, 0.2);
+            color: #ff0000;
+            border: 1px solid #ff0000;
+        }
+
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .feature-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            background: rgba(0, 255, 255, 0.1);
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            border-radius: 25px;
+            font-size: 1rem;
+            color: #00ffff;
+        }
+
+        .logo-demo {
+            width: 100px;
+            height: 100px;
+            margin: 2rem auto;
+            background: linear-gradient(135deg, #8a2be2, #00ffff);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 40px rgba(138, 43, 226, 0.6);
+            animation: logoFloat 3s ease-in-out infinite;
+            position: relative;
+        }
+
+        .logo-demo::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px solid rgba(138, 43, 226, 0.5);
+            animation: logoPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes logoFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        @keyframes logoPulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.3); opacity: 0.3; }
+        }
+
+        .logo-inner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid white;
+            border-radius: 50%;
+            border-top-color: transparent;
+            border-right-color: transparent;
+            animation: logoSpin 4s linear infinite;
+        }
+
+        @keyframes logoSpin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        code {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 0.2rem 0.5rem;
+            border-radius: 5px;
+            color: #00ffff;
+            font-family: 'Courier New', monospace;
+        }
+
+        .info-box {
+            background: rgba(138, 43, 226, 0.1);
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .info-box h3 {
+            color: #8a2be2;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-demo">
+            <div class="logo-inner"></div>
+        </div>
+
+        <h1>JARVIS OMEGA PROTOCOL</h1>
+        <p class="subtitle">Enterprise AI Command Center - Demo Page</p>
+
+        <div class="status-section">
+            <h2 style="color: #00ffff; margin-bottom: 1rem;">System Status</h2>
+            <div class="status-item">
+                <span>Backend Server</span>
+                <span class="status-badge status-online" id="backend-status">Checking...</span>
+            </div>
+            <div class="status-item">
+                <span>MongoDB Database</span>
+                <span class="status-badge status-offline" id="db-status">Not Required for Demo</span>
+            </div>
+            <div class="status-item">
+                <span>Frontend Pages</span>
+                <span class="status-badge status-online">Ready</span>
+            </div>
+        </div>
+
+        <div class="page-grid">
+            <div class="page-card">
+                <h2>🔐 Login Page</h2>
+                <p>Experience the new JARVIS OMEGA PROTOCOL login interface with animated holographic logo and neon effects.</p>
+                <a href="login.html" class="btn" target="_blank">Open Login</a>
+            </div>
+
+            <div class="page-card">
+                <h2>📝 Register Page</h2>
+                <p>Sign up with the futuristic registration form featuring purple/cyan gradients and smooth animations.</p>
+                <a href="signup.html" class="btn" target="_blank">Open Register</a>
+            </div>
+
+            <div class="page-card">
+                <h2>📊 Dashboard</h2>
+                <p>Access the main JARVIS AI dashboard with document management and AI chatbot capabilities.</p>
+                <a href="index.html" class="btn" target="_blank">Open Dashboard</a>
+            </div>
+
+            <div class="page-card">
+                <h2>🧪 Test Suite</h2>
+                <p>Interactive testing page to verify backend API connectivity and functionality.</p>
+                <a href="test.html" class="btn" target="_blank">Open Tests</a>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <h3>✨ Design Features</h3>
+            <ul style="list-style: none; padding: 0; line-height: 2;">
+                <li>✅ Animated holographic logo with float, spin, and pulse effects</li>
+                <li>✅ Purple/cyan neon color scheme</li>
+                <li>✅ Gradient backgrounds with particle animations</li>
+                <li>✅ Glowing vertical line decorations</li>
+                <li>✅ Light input fields with focus effects</li>
+                <li>✅ Purple gradient buttons with hover animations</li>
+                <li>✅ Feature badges (Secure, Fast, AI-Powered)</li>
+                <li>✅ Fully responsive mobile design</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <h3>📝 Note About MongoDB</h3>
+            <p>The login and register pages will display perfectly <strong>without MongoDB</strong>. You can see all the animations, styling, and UI design.</p>
+            <p style="margin-top: 1rem;">However, to actually register/login users, you need MongoDB installed. The pages will show appropriate error messages if MongoDB is not connected.</p>
+            <p style="margin-top: 1rem;">To install MongoDB: <code>See MONGODB_SETUP.md</code></p>
+        </div>
+
+        <div class="features">
+            <div class="feature-badge">
+                <span>🔒</span>
+                <span>Secure</span>
+            </div>
+            <div class="feature-badge">
+                <span>⚡</span>
+                <span>Fast</span>
+            </div>
+            <div class="feature-badge">
+                <span>🤖</span>
+                <span>AI-Powered</span>
+            </div>
+            <div class="feature-badge">
+                <span>🎨</span>
+                <span>Modern UI</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Check backend status
+        async function checkBackend() {
+            try {
+                const response = await fetch('http://localhost:5000/api/health');
+                const data = await response.json();
+                document.getElementById('backend-status').textContent = 'Online';
+                document.getElementById('backend-status').className = 'status-badge status-online';
+            } catch (error) {
+                document.getElementById('backend-status').textContent = 'Offline';
+                document.getElementById('backend-status').className = 'status-badge status-offline';
+            }
+        }
+
+        // Check on page load
+        checkBackend();
+    </script>
+</body>
+</html>
